@@ -14,7 +14,87 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="main">
+      <ion-card class="card-1">
+        <ion-card-header>
+          <ion-item>
+            <ion-label>Date/Day</ion-label><br />
+            <ion-label>Time</ion-label>
+          </ion-item>
+
+          <ion-card-title class="ion-text-center">
+            <h2 class="h-1">Todo List</h2>
+          </ion-card-title>
+        </ion-card-header>
+
+      </ion-card>
+
+      <ion-card class="card-2">
+        <ion-card-header>
+          <ion-card-title>
+            Good After Noon, 
+          </ion-card-title>
+          <ion-card-subtitle>
+            Username
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+      <div class="list-container">
+          <ion-card class="card-3">
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <img src="../../assets/images/sun.png">
+              </ion-thumbnail>
+              <ion-label>Today</ion-label>
+            </ion-item>
+            <ion-button  class="arrow ion-text-center">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-button>
+          </ion-card>
+        <ion-card class="card-3">
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img src="../../assets/images/calendar.png">
+            </ion-thumbnail>
+            <ion-label>Planned</ion-label>
+          </ion-item>
+          <ion-button class="arrow ion-text-center">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-card>
+        <ion-card class="card-3">
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img src="../../assets/images/user.png">
+            </ion-thumbnail>
+            <ion-label>Personal</ion-label>
+          </ion-item>
+          <ion-button class="arrow ion-text-center">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-card>
+        <ion-card class="card-3">
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img src="../../assets/images/shopping.png">
+            </ion-thumbnail>
+            <ion-label> Shopping</ion-label>
+          </ion-item>
+          <ion-button class="arrow ion-text-center">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-card>
+
+       <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+       
+      </div>
+     
+    </div>
   </div>
 </ion-content>

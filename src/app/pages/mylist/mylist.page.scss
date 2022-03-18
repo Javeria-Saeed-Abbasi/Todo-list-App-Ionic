@@ -1,0 +1,76 @@
+@font-face {
+    font-family:'LG-Regular';
+    src: url('../../../assets/font-icon/LeagueGothic-Regular.ttf');
+  }
+  @font-face {
+    font-family:'PH-Regular';
+    src: url('../../../assets/font-icon/PatrickHand-Regular.ttf');
+  }
+ion-content{
+    --background:url('../../../assets/images/bg2.jpg');
+    width: 100%;
+    height: 100%;
+    background-size:contain;
+    .card-1{
+        border-radius: 3px 149px 3px 76px;
+        h2{
+            font-family:'LG-Regular';
+            font-size:35px;
+        }
+    }
+      .card-2{
+        display: flex;
+        flex-direction: row;
+        border-radius: 3px 149px 3px 76px;
+        --background: #FFB2A6;
+        // border-radius: 149px 3px 76px 3px;
+        ion-label{
+          font-family:'PH-Regular';
+          font-size:22px;
+        }
+        ion-item{
+          width: 100%;
+        }
+        ion-button{
+          --background:#F47340;
+          height: auto;
+        }
+        ion-icon{
+          font-size:30px;
+        }
+      }
+      .lists{
+        .card-3{
+            display: flex;
+            flex-direction: row;
+            border-radius: 3px 149px 3px 76px;
+            // --background: #FFB2A6;
+            // border-radius: 149px 3px 76px 3px;
+            ion-label{
+              font-family:'PH-Regular';
+              font-size:22px;
+            }
+            ion-item{
+              width: 100%;
+              --background: #FFB2A6;
+            }
+            ion-button{
+            //   --background:#F47340;
+            --background:transparent;  
+            height: auto;
+            color: #000000;
+            }
+            ion-icon{
+              font-size:30px;
+            }
+      }
+      ion-fab ion-fab-button{
+        // --background:#F47340;
+        --background:#EF2F88;
+        ion-icon{
+          color: #000000;
+        }
+    }
+    }
+     
+}

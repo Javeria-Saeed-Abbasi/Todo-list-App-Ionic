@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mylist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="mylist">
+    <div class="container list-cont">
+      <ion-card class="card-1">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">
+            <h2>Add New Task</h2>
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+
+        <ion-card class="card-2">
+          <ion-button routerLink="" class="arrow ion-text-center">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </ion-button>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img src="../../assets/images/sun.png">
+            </ion-thumbnail>
+            <ion-label>Today</ion-label>
+          </ion-item>
+        </ion-card>
+
+        <div class="lists"> 
+          <ion-card class="card-3">
+            <ion-item>
+              <ion-label>Planned</ion-label>
+            </ion-item>
+            <ion-button class="delete ion-text-center">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-card>
+          <ion-card class="card-3">
+            <ion-item>
+            
+              <ion-label>Planned</ion-label>
+            </ion-item>
+            <ion-button class="delete ion-text-center">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-card>
+        <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+       
+        </div>
+
+    </div>
+  </div>
+</ion-content>
