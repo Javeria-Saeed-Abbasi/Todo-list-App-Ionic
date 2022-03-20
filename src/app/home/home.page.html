@@ -18,8 +18,7 @@
       <ion-card class="card-1">
         <ion-card-header>
           <ion-item>
-            <ion-label>Date/Day</ion-label><br />
-            <ion-label>Time</ion-label>
+            <ion-label>{{today | date:'fullDate'}}</ion-label><br/>          
           </ion-item>
 
           <ion-card-title class="ion-text-center">
@@ -88,7 +87,7 @@
 
        <!-- fab placed to the bottom end -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="">
-    <ion-fab-button>
+    <ion-fab-button (click)="addTask()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

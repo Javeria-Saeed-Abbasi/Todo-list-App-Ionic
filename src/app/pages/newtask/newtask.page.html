@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>newtask</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-item>
+    <ion-textarea placeholder="Add New Task">
+    </ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+    <ion-label >Category</ion-label>
+    <span>{{taskCategory}}</span>
+  </ion-item>
+
+  <ion-item>
+    <ion-chip *ngFor="let category of categories; let i = index" (click)="selectedCategory(i)">
+      <ion-label>{{category}}</ion-label>
+    </ion-chip>
+  </ion-item>
+
+  <ion-button class="ion-margin" expand="block">
+Add Task
+  </ion-button>
+</ion-card>
+</ion-content>
