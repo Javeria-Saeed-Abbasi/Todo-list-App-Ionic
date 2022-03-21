@@ -7,8 +7,8 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./newtask.page.scss'],
 })
 export class NewtaskPage implements OnInit {
-  taskList
-  categories = ['work' , 'personal' , 'business' , 'planned' , 'shopping']
+
+categories = ['work' , 'personal' , 'business' , 'planned' , 'shopping']
  taskCategory  
  taskObject 
 constructor(public modalCtrl:ModalController) { }
@@ -27,7 +27,8 @@ constructor(public modalCtrl:ModalController) { }
       itemCategory: this.taskCategory,
     }), 
     this.dismiss();
-    console.log(this.taskList);
+
+    // console.log(this.taskList);
   }
 
 }

@@ -1,16 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>New Task</ion-title>
+    <ion-title>Add New Category</ion-title>
     <ion-icon name="close" slot="end" size="large" (click)="dismiss()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 <ion-card class="ion-padding">
-  <ion-item>
+  <!-- <ion-item>
     <ion-textarea placeholder="Add New Task" [(ngModel)]="taskList">
     </ion-textarea>
-  </ion-item>
+  </ion-item> -->
 
   <ion-item class="cat">
     <ion-icon name="pricetag-outline" slot="start"></ion-icon>
@@ -29,7 +29,7 @@
   <ion-row>
     <ion-col size="6" offset="3">
       <ion-button class="ion-margin ion-justify-content-center" (click)="addNewTask()">
-        Add Task
+        Add Category
         </ion-button>
     </ion-col>
   </ion-row>
