@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-newtask',
@@ -6,14 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newtask.page.scss'],
 })
 export class NewtaskPage implements OnInit {
-categories = ['work' , 'personal' , 'business' , 'planned' , 'shopping']
- taskName = '';
- taskCategory = '';  
-constructor() { }
+  taskList
+  categories = ['work' , 'personal' , 'business' , 'planned' , 'shopping']
+ taskCategory  
+ taskObject 
+constructor(public modalCtrl:ModalController) { }
 
   ngOnInit() {
+  }
+
+  async dismiss(){
+    await this.modalCtrl.dismiss(this.taskObject);
   }
   selectedCategory(index){
     this.taskCategory = this.categories[index];
   }
+  addNewTask(){
+    this.taskObject = ({
+      itemCategory: this.taskCategory,
+    }), 
+    this.dismiss();
+    console.log(this.taskList);
+  }
+
 }

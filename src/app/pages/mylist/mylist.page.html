@@ -10,7 +10,7 @@
       <ion-card class="card-1">
         <ion-card-header>
           <ion-card-title class="ion-text-center">
-            <h2>Add New Task</h2>
+            <h2>My List</h2>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
@@ -29,23 +29,32 @@
         </ion-card>
 
         <div class="lists"> 
-          <ion-card class="card-3">
+          <ion-card class="card-3" *ngFor ="let item of todoList;let i = index;">
             <ion-item>
-              <ion-label>Planned</ion-label>
+              <ion-label>{{item.taskList}}</ion-label>
             </ion-item>
-            <ion-button class="delete ion-text-center">
+            <ion-button class="delete ion-text-center" (click)="list_del(i)">
               <ion-icon name="trash-outline"></ion-icon>
             </ion-button>
           </ion-card>
-          <ion-card class="card-3">
+
+          <!-- <ion-card class="card-3">
             <ion-item>
-            
-              <ion-label>Planned</ion-label>
+              <ion-label>{{item.taskList}}</ion-label>
             </ion-item>
-            <ion-button class="delete ion-text-center">
+            <ion-button class="delete ion-text-center" (click)="list_del(i)">
               <ion-icon name="trash-outline"></ion-icon>
             </ion-button>
-          </ion-card>
+          </ion-card> -->
+
+          <!-- <ion-card class="card-3">
+            <ion-item>
+              <ion-label></ion-label>
+            </ion-item>
+            <ion-button class="delete ion-text-center" (click)="list_del(i)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-card> -->
         <!-- fab placed to the bottom end -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="">
     <ion-fab-button>
