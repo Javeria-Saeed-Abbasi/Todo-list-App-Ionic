@@ -31,7 +31,7 @@
       <ion-card class="card-2">
         <ion-card-header>
           <ion-card-title>
-            Good After Noon, 
+           {{greetings()}}
           </ion-card-title>
           <ion-card-subtitle>
             Username
@@ -40,14 +40,14 @@
       </ion-card>
 
       <div class="list-container">
-          <ion-card class="card-3">
+          <ion-card class="card-3" *ngFor="let item of todoList">
             <ion-item>
               <ion-thumbnail slot="start">
                 <img src="../../assets/images/sun.png">
               </ion-thumbnail>
-              <ion-label>Today</ion-label>
+              <ion-label>{{item.itemCategory}}</ion-label>
             </ion-item>
-            <ion-button  class="arrow ion-text-center">
+            <ion-button  class="arrow ion-text-center" routerLink="../mylist">
               <ion-icon name="chevron-forward-outline"></ion-icon>
             </ion-button>
           </ion-card>
@@ -58,7 +58,7 @@
             </ion-thumbnail>
             <ion-label>Planned</ion-label>
           </ion-item>
-          <ion-button class="arrow ion-text-center">
+          <ion-button class="arrow ion-text-center" routerLink="../mylist">
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </ion-button>
         </ion-card>
@@ -69,7 +69,7 @@
             </ion-thumbnail>
             <ion-label>Personal</ion-label>
           </ion-item>
-          <ion-button class="arrow ion-text-center">
+          <ion-button class="arrow ion-text-center" routerLink="../mylist">
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </ion-button>
         </ion-card>
@@ -80,14 +80,13 @@
             </ion-thumbnail>
             <ion-label> Shopping</ion-label>
           </ion-item>
-          <ion-button class="arrow ion-text-center">
+          <ion-button class="arrow ion-text-center" routerLink="../mylist">
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </ion-button>
         </ion-card>
-
        <!-- fab placed to the bottom end -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="">
-    <ion-fab-button (click)="addTask()">
+    <ion-fab-button (click)="addNewTask()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

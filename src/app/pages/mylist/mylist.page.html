@@ -16,7 +16,7 @@
       </ion-card>
 
 
-        <ion-card class="card-2">
+        <ion-card class="card-2" *ngFor ="let item of todoList;let i = index;">
           <ion-button routerLink="" class="arrow ion-text-center">
             <ion-icon name="chevron-back-outline"></ion-icon>
           </ion-button>
@@ -24,14 +24,14 @@
             <ion-thumbnail slot="start">
               <img src="../../assets/images/sun.png">
             </ion-thumbnail>
-            <ion-label>Today</ion-label>
+            <ion-label>{{item.itemCategory}}</ion-label>
           </ion-item>
         </ion-card>
 
         <div class="lists"> 
           <ion-card class="card-3" *ngFor ="let item of todoList;let i = index;">
             <ion-item>
-              <ion-label>{{item.taskList}}</ion-label>
+              <ion-label>{{item.itemList}}</ion-label>
             </ion-item>
             <ion-button class="delete ion-text-center" (click)="list_del(i)">
               <ion-icon name="trash-outline"></ion-icon>
@@ -57,7 +57,7 @@
           </ion-card> -->
         <!-- fab placed to the bottom end -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="">
-    <ion-fab-button>
+    <ion-fab-button (click)="addNewList()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

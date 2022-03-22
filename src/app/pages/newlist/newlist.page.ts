@@ -7,10 +7,27 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./newlist.page.scss'],
 })
 export class NewlistPage implements OnInit {
-
+  
+ categories = ['Work' , 'Personal' , 'Business' , 'Planned' , 'Shopping']
+  taskList
+  taskObject
+  taskCategory
   constructor(public modalCtrl:ModalController) { }
+  
 
   ngOnInit() {
   }
-
+  async dismiss(){
+    await this.modalCtrl.dismiss(this.taskObject);
+  }
+  selectedCategory(index){
+    this.taskCategory = this.categories[index];
+  }
+  addNew(){
+    this.taskObject = ({
+      itemList: this.taskList,
+      itemCategory: this.taskCategory,
+    }),
+    this.dismiss();
+  }
 }
