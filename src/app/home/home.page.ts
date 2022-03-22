@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { modalController } from '@ionic/core';
+import {Router, NavigationExtras } from '@angular/router';
 import { NewtaskPage } from '../pages/newtask/newtask.page';
 // import { time } from 'console';
 
@@ -12,7 +13,7 @@ import { NewtaskPage } from '../pages/newtask/newtask.page';
 export class HomePage {
   todoList = []
   today : number = Date.now();
-  constructor(public modalCtrl:ModalController) {}
+  constructor(public modalCtrl:ModalController, private router: Router) {}
   async addNewTask(){
     const modal = await this.modalCtrl.create({
       component: NewtaskPage
@@ -22,6 +23,15 @@ export class HomePage {
       this.todoList.push(newTaskObj.data)
     })
     return await modal.present();
+  }
+  nextpage(item){
+    let navigationExtras: NavigationExtras=
+    {
+      queryParams:{
+        special: item.itemCategory
+      }
+    };
+    this.router.navigate(['mylist'], navigationExtras);
   }
 //  delete(index){
 //    this.todoList.splice(index,1);

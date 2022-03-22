@@ -47,11 +47,11 @@
               </ion-thumbnail>
               <ion-label>{{item.itemCategory}}</ion-label>
             </ion-item>
-            <ion-button  class="arrow ion-text-center" routerLink="../mylist">
+            <ion-button  class="arrow ion-text-center" (click)="nextpage(item)">
               <ion-icon name="chevron-forward-outline"></ion-icon>
             </ion-button>
           </ion-card>
-        <ion-card class="card-3">
+         <!-- <ion-card class="card-3">
           <ion-item>
             <ion-thumbnail slot="start">
               <img src="../../assets/images/calendar.png">
@@ -83,7 +83,7 @@
           <ion-button class="arrow ion-text-center" routerLink="../mylist">
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </ion-button>
-        </ion-card>
+        </ion-card> -->
        <!-- fab placed to the bottom end -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="">
     <ion-fab-button (click)="addNewTask()">

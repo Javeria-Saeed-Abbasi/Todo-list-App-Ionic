@@ -13,7 +13,7 @@ export class NewlistPage implements OnInit {
   taskObject
   taskCategory
   constructor(public modalCtrl:ModalController) { }
-  
+
 
   ngOnInit() {
   }

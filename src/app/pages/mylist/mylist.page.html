@@ -16,7 +16,7 @@
       </ion-card>
 
 
-        <ion-card class="card-2" *ngFor ="let item of todoList;let i = index;">
+        <ion-card class="card-2">
           <ion-button routerLink="" class="arrow ion-text-center">
             <ion-icon name="chevron-back-outline"></ion-icon>
           </ion-button>
@@ -24,7 +24,7 @@
             <ion-thumbnail slot="start">
               <img src="../../assets/images/sun.png">
             </ion-thumbnail>
-            <ion-label>{{item.itemCategory}}</ion-label>
+            <ion-label>{{itemCategory.special}}</ion-label>
           </ion-item>
         </ion-card>
 

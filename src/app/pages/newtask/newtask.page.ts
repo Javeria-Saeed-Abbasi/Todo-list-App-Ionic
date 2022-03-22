@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
+import  { Validators, FormControl, FormBuilder, FormArray, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-newtask',
   templateUrl: './newtask.page.html',
   styleUrls: ['./newtask.page.scss'],
 })
 export class NewtaskPage implements OnInit {
+  buttonDisabled = false;
 
-categories = ['Work' , 'Personal' , 'Business' , 'Planned' , 'Shopping']
+  categories = ['Work' , 'Personal' , 'Business' , 'Planned' , 'Shopping']
  taskCategory  
  taskObject 
-constructor(public modalCtrl:ModalController) { }
+constructor(public modalCtrl:ModalController) {
+
+ }
+
 
   ngOnInit() {
   }
-
   async dismiss(){
     await this.modalCtrl.dismiss(this.taskObject);
   }
@@ -25,7 +28,10 @@ constructor(public modalCtrl:ModalController) { }
   addNewTask(){
     this.taskObject = ({
       itemCategory: this.taskCategory,
-    }),
+    })
+    if (this.taskCategory == undefined || this.taskCategory == null){
+      this.buttonDisabled = true;
+    }
     this.dismiss();
     // console.log(this.taskList);
   }
