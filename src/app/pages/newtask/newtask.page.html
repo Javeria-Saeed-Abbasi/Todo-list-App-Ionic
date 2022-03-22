@@ -6,33 +6,36 @@
 </ion-header>
 
 <ion-content>
-<ion-card class="ion-padding">
-  <!-- <ion-item>
-    <ion-textarea placeholder="Add New Task" [(ngModel)]="taskList">
-    </ion-textarea>
-  </ion-item> -->
+  <form>
+    <ion-card class="ion-padding">
+      <!-- <ion-item>
+        <ion-textarea placeholder="Add New Task" [(ngModel)]="taskList">
+        </ion-textarea>
+      </ion-item> -->
+    
+      <ion-item class="cat">
+        <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+        <ion-label>Category</ion-label>
+       <ion-label>
+        {{taskCategory}}
+       </ion-label>
+      </ion-item>
+    
+      <ion-item>
+        <ion-chip *ngFor="let category of categories; let i = index" (click)="selectedCategory(i)">
+          <ion-label>{{category}}</ion-label>
+        </ion-chip>
+      </ion-item>
+    
+      <ion-row>
+        <ion-col size="6" offset="3">
+          <ion-button class="ion-margin ion-justify-content-center" (click)="addNewTask()">
+            Add Category
+            </ion-button>
+        </ion-col>
+      </ion-row>
+     
+    </ion-card>
+  </form>
 
-  <ion-item class="cat">
-    <ion-icon name="pricetag-outline" slot="start"></ion-icon>
-    <ion-label>Category</ion-label>
-   <ion-label>
-    {{taskCategory}}
-   </ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-chip *ngFor="let category of categories; let i = index" (click)="selectedCategory(i)">
-      <ion-label>{{category}}</ion-label>
-    </ion-chip>
-  </ion-item>
-
-  <ion-row>
-    <ion-col size="6" offset="3">
-      <ion-button class="ion-margin ion-justify-content-center" (click)="addNewTask()">
-        Add Category
-        </ion-button>
-    </ion-col>
-  </ion-row>
- 
-</ion-card>
 </ion-content>
