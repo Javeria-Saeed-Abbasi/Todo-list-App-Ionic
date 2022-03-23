@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { NewlistPage } from '../newlist/newlist.page';
+import {Router, NavigationExtras } from '@angular/router';
+
 @Component({
   selector: 'app-mylist',
   templateUrl: './mylist.page.html',
@@ -20,6 +22,7 @@ export class MylistPage implements OnInit {
     //   }
     // });
     this.itemCategory = history.state.itemCategory
+    
   }
   async addNewList(){
     const modal = await this.modalCtrl.create({
@@ -35,6 +38,18 @@ export class MylistPage implements OnInit {
   list_del(index){
     this.todoList.splice(index,1);
 
+  }
+  changeText(item){
+    console.log (item);
+    let navigationExtras: NavigationExtras=
+    {
+      queryParams:{
+        special: item.itemList
+      }
+    };
+    this.router.navigate(['/newlist'], {
+      state : item
+    });
   }
   ngOnInit() {
   }

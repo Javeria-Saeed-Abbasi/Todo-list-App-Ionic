@@ -31,7 +31,7 @@
         <div class="lists"> 
           <ion-card class="card-3" *ngFor ="let item of todoList;let i = index;">
             <div *ngIf="item?.itemList!= undefined" class="myListText">
-              <ion-item>
+              <ion-item (click)="changeText(item)">
                 <ion-label>{{item?.itemList}}</ion-label>
               </ion-item>
               <ion-button class="delete ion-text-center" (click)="list_del(i)">
