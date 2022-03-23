@@ -7,15 +7,13 @@ import  { Validators, FormControl, FormBuilder, FormArray, FormGroup } from '@an
   styleUrls: ['./newtask.page.scss'],
 })
 export class NewtaskPage implements OnInit {
-  buttonDisabled = false;
 
-  categories = ['Work' , 'Personal' , 'Business' , 'Planned' , 'Shopping']
+categories = ['Work' , 'Personal' , 'Business' , 'Planned' , 'Shopping']
  taskCategory  
  taskObject 
 constructor(public modalCtrl:ModalController) {
 
  }
-
 
   ngOnInit() {
   }
@@ -28,10 +26,7 @@ constructor(public modalCtrl:ModalController) {
   addNewTask(){
     this.taskObject = ({
       itemCategory: this.taskCategory,
-    })
-    if (this.taskCategory == undefined || this.taskCategory == null){
-      this.buttonDisabled = true;
-    }
+    }),
     this.dismiss();
     // console.log(this.taskList);
   }

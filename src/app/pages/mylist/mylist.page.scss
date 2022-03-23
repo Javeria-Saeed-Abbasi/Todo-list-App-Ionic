@@ -46,23 +46,29 @@ ion-content{
             border-radius: 3px 149px 3px 76px;
             // --background: #FFB2A6;
             // border-radius: 149px 3px 76px 3px;
-            ion-label{
-              font-family:'PH-Regular';
-              font-size:22px;
-            }
-            ion-item{
+            .myListText{
+              display: flex;
+              flex-direction: row;
               width: 100%;
-              --background: #FFB2A6;
+              ion-label{
+                font-family:'PH-Regular';
+                font-size:22px;
+              }
+              ion-item{
+                width: 100%;
+                --background: #FFB2A6;
+              }
+              ion-button{
+              //   --background:#F47340;
+              --background:transparent;  
+              height: auto;
+              color: #000000;
+              }
+              ion-icon{
+                font-size:30px;
+              }
             }
-            ion-button{
-            //   --background:#F47340;
-            --background:transparent;  
-            height: auto;
-            color: #000000;
-            }
-            ion-icon{
-              font-size:30px;
-            }
+           
       }
       ion-fab ion-fab-button{
         // --background:#F47340;

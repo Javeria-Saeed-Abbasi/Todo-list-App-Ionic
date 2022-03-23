@@ -24,18 +24,21 @@
             <ion-thumbnail slot="start">
               <img src="../../assets/images/sun.png">
             </ion-thumbnail>
-            <ion-label>{{itemCategory.special}}</ion-label>
+            <ion-label>{{itemCategory}}</ion-label>
           </ion-item>
         </ion-card>
 
         <div class="lists"> 
           <ion-card class="card-3" *ngFor ="let item of todoList;let i = index;">
-            <ion-item>
-              <ion-label>{{item.itemList}}</ion-label>
-            </ion-item>
-            <ion-button class="delete ion-text-center" (click)="list_del(i)">
-              <ion-icon name="trash-outline"></ion-icon>
-            </ion-button>
+            <div *ngIf="item?.itemList!= undefined" class="myListText">
+              <ion-item>
+                <ion-label>{{item?.itemList}}</ion-label>
+              </ion-item>
+              <ion-button class="delete ion-text-center" (click)="list_del(i)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </div>
+           
           </ion-card>
 
           <!-- <ion-card class="card-3">

@@ -11,14 +11,15 @@ export class MylistPage implements OnInit {
   todoList = []
   itemCategory;
   constructor(public modalCtrl:ModalController, private route: ActivatedRoute, private router: Router) { 
-    this.route.queryParams.subscribe(params => {
-      console.log(params);
-      this.itemCategory = params;
-      if(params && params.special){
-        this.todoList = JSON.parse(params.special);
-        console.log(this.todoList)
-      }
-    });
+    // this.route.queryParams.subscribe(params => {
+    //   console.log(params, "jav");
+    //   this.itemCategory = params;
+    //   if(params && params.special){
+    //     this.todoList = JSON.parse(params.special);
+    //     console.log(this.todoList)
+    //   }
+    // });
+    this.itemCategory = history.state.itemCategory
   }
   async addNewList(){
     const modal = await this.modalCtrl.create({

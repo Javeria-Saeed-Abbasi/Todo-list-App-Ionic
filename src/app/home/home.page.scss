@@ -44,12 +44,16 @@ ion-content{
   }
   .list-container{
     // margin-top: 52px;
-    .card-3{
+   .card-3{
       display: flex;
       flex-direction: row;
       border-radius: 3px 149px 3px 76px;
       --background: #FFB2A6;
       // border-radius: 149px 3px 76px 3px;
+    .catg{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
       ion-label{
         font-family:'PH-Regular';
         font-size:22px;
@@ -64,6 +68,10 @@ ion-content{
       ion-icon{
         font-size:30px;
       }
+     
+    }
+      
+
     }
     ion-fab ion-fab-button{
       // --background:#F47340;

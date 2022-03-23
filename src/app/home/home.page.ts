@@ -25,13 +25,16 @@ export class HomePage {
     return await modal.present();
   }
   nextpage(item){
+    console.log (item);
     let navigationExtras: NavigationExtras=
     {
       queryParams:{
         special: item.itemCategory
       }
     };
-    this.router.navigate(['mylist'], navigationExtras);
+    this.router.navigate(['mylist'], {
+      state : item 
+    });
   }
 //  delete(index){
 //    this.todoList.splice(index,1);
