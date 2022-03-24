@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import {Router, NavigationExtras } from '@angular/router';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-newlist',
@@ -9,22 +10,30 @@ import {Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./newlist.page.scss'],
 })
 export class NewlistPage implements OnInit {
-  
- categories = ['Work' , 'Personal' , 'Business' , 'Planned' , 'Shopping']
-  taskList
-  itemList
-  taskObject
-  taskCategory
-  constructor(public modalCtrl:ModalController, private route: ActivatedRoute, private router: Router) { 
-    this.itemList = history.state.itemList
-    console.log(this.itemList);
+ @Input ()
+ title: string;
+// updatedList: string;
+  categories = ['Work' , 'Personal' , 'Business' , 'Planned' , 'Shopping'];
+  taskList;
+  itemList;
+
+  taskObject;
+
+  taskCategory;
+  itemCategory;
+  constructor(public modalCtrl: ModalController, private route: ActivatedRoute, private router: Router) {
+    this.itemList = history.state.itemList;
+    this.itemCategory = history.state.itemCategory;
+
+    // console.log(this.itemList);
+    console.log(this.itemCategory);
   }
 
 
   ngOnInit() {
   }
   async dismiss(){
-    console.log(this.taskObject)
+    console.log(this.taskObject);
     await this.modalCtrl.dismiss(this.taskObject);
   }
   // selectedCategory(index){
@@ -33,8 +42,10 @@ export class NewlistPage implements OnInit {
   addNew(){
     this.taskObject = ({
       itemList: this.taskList,
-      // itemCategory: this.taskCategory,
-    })
+      itemCategory: this.itemCategory,
+    });
+    console.log(this.title);
+    // console.log(this.updatedList);
     this.dismiss();
   }
 }

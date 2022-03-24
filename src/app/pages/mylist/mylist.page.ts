@@ -3,55 +3,65 @@ import { ModalController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { NewlistPage } from '../newlist/newlist.page';
 import {Router, NavigationExtras } from '@angular/router';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-mylist',
   templateUrl: './mylist.page.html',
   styleUrls: ['./mylist.page.scss'],
 })
 export class MylistPage implements OnInit {
-  todoList = []
+  todoList = [];
   itemCategory;
-  constructor(public modalCtrl:ModalController, private route: ActivatedRoute, private router: Router) { 
-    // this.route.queryParams.subscribe(params => {
-    //   console.log(params, "jav");
-    //   this.itemCategory = params;
-    //   if(params && params.special){
-    //     this.todoList = JSON.parse(params.special);
-    //     console.log(this.todoList)
-    //   }
-    // });
-    this.itemCategory = history.state.itemCategory
-    
+  itemList;
+  title = true;
+  constructor(public modalCtrl: ModalController, private route: ActivatedRoute, private router: Router) {
+    this.itemCategory = history.state.itemCategory;
   }
   async addNewList(){
     const modal = await this.modalCtrl.create({
-      component: NewlistPage
-    })
+      component: NewlistPage,
+      componentProps : {
+        title: 'New List',
+    }
+    });
     modal.onDidDismiss().then(newTaskObj =>{
       console.log(newTaskObj.data);
-      this.todoList.push(newTaskObj.data)
-    })
+      this.todoList.push(newTaskObj.data);
+    });
     console.log(this.todoList);
+
     return await modal.present();
   }
-  list_del(index){
+  listDel(index){
     this.todoList.splice(index,1);
-
   }
-  changeText(item){
-    console.log (item);
-    let navigationExtras: NavigationExtras=
-    {
-      queryParams:{
-        special: item.itemList
-      }
-    };
-    this.router.navigate(['/newlist'], {
-      state : item
+
+  //On update Change Text
+  async changeText(item, index: number){
+    const modal = await this.modalCtrl.create({
+      component: NewlistPage,
+      componentProps : {
+        title: 'Update List',
+    }
     });
+    console.log(this.todoList);
+    console.log (item.itemList);
+    console.log(index);
+
+
+    return await modal.present();
+    // console.log (item);
+    // console.log(index);
+    // const navigationExtras: NavigationExtras=
+    // {
+    //   queryParams:{
+    //     special: item.itemList
+    //   },
+    // };
+    // this.router.navigate(['/newlist'], {
+    //   state : item
+    // });
   }
   ngOnInit() {
   }
-
 }

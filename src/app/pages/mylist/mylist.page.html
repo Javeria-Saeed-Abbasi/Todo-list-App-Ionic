@@ -28,17 +28,17 @@
           </ion-item>
         </ion-card>
 
-        <div class="lists"> 
+        <div class="lists">
           <ion-card class="card-3" *ngFor ="let item of todoList;let i = index;">
-            <div *ngIf="item?.itemList!= undefined" class="myListText">
-              <ion-item (click)="changeText(item)">
+            <div *ngIf="item?.itemList!== undefined" class="myListText">
+              <ion-item (click)="changeText(item, i)">
                 <ion-label>{{item?.itemList}}</ion-label>
               </ion-item>
-              <ion-button class="delete ion-text-center" (click)="list_del(i)">
+              <ion-button class="delete ion-text-center" (click)="listDel(i)">
                 <ion-icon name="trash-outline"></ion-icon>
               </ion-button>
             </div>
-           
+
           </ion-card>
 
           <!-- <ion-card class="card-3">
@@ -64,7 +64,7 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-       
+
         </div>
 
     </div>

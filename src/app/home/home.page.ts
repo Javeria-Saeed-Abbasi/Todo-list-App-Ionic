@@ -11,37 +11,37 @@ import { NewtaskPage } from '../pages/newtask/newtask.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  todoList = []
-  today : number = Date.now();
-  constructor(public modalCtrl:ModalController, private router: Router) {}
+  todoList = [];
+  today: number = Date.now();
+  constructor(public modalCtrl: ModalController, private router: Router) {}
   async addNewTask(){
     const modal = await this.modalCtrl.create({
       component: NewtaskPage
-    })
+    });
     modal.onDidDismiss().then(newTaskObj =>{
       console.log(newTaskObj.data);
-      this.todoList.push(newTaskObj.data)
-    })
+      this.todoList.push(newTaskObj.data);
+    });
     return await modal.present();
   }
   nextpage(item){
     console.log (item);
-    let navigationExtras: NavigationExtras=
+    const navigationExtras: NavigationExtras=
     {
       queryParams:{
         special: item.itemCategory
       }
     };
     this.router.navigate(['mylist'], {
-      state : item 
+      state : item,
     });
   }
 //  delete(index){
 //    this.todoList.splice(index,1);
 //  }
 greetings() {
-  let myDate = new Date();
-  let hour = myDate.getHours();  
+  const myDate = new Date();
+  const hour = myDate.getHours();
   // console.log(hour);
   if (hour <= 12) {
     return 'Good Morning';

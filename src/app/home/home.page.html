@@ -18,7 +18,7 @@
       <ion-card class="card-1">
         <ion-card-header>
           <ion-item>
-            <ion-label>{{today | date:'fullDate'}}</ion-label><br/>          
+            <ion-label>{{today | date:'fullDate'}}</ion-label><br/>
           </ion-item>
 
           <ion-card-title class="ion-text-center">
@@ -41,7 +41,7 @@
 
       <div class="list-container">
           <ion-card class="card-3" *ngFor="let item of todoList">
-            <div *ngIf="item?.itemCategory!= undefined" class="catg">
+            <div *ngIf="item?.itemCategory!== undefined" class="catg">
               <ion-item>
                 <ion-thumbnail slot="start">
                   <img src="../../assets/images/sun.png">
@@ -92,9 +92,9 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-       
+
       </div>
-     
+
     </div>
   </div>
 </ion-content>
