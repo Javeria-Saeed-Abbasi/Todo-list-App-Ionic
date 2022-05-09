@@ -14,8 +14,10 @@ export class MylistPage implements OnInit {
   itemCategory;
   itemList;
   title = true;
+
   constructor(public modalCtrl: ModalController, private route: ActivatedRoute, private router: Router) {
-    this.itemCategory = history.state.itemCategory;
+    this.itemCategory = history.state.itemCategory
+    
   }
   async addNewList(){
     const modal = await this.modalCtrl.create({
@@ -25,7 +27,6 @@ export class MylistPage implements OnInit {
     }
     });
     modal.onDidDismiss().then(newTaskObj =>{
-      console.log(newTaskObj.data);
       this.todoList.push(newTaskObj.data);
     });
     console.log(this.todoList);
@@ -42,13 +43,18 @@ export class MylistPage implements OnInit {
       component: NewlistPage,
       componentProps : {
         title: 'Update List',
+        
     }
+    
+    } );
+    modal.onDidDismiss().then((newTaskObj:any) =>{
+      this.todoList.map((res, i)=>{
+        if(index == i){
+          res.itemList = newTaskObj.data.itemList;  
+        }
+      })
+      
     });
-    console.log(this.todoList);
-    console.log (item.itemList);
-    console.log(index);
-
-
     return await modal.present();
     // console.log (item);
     // console.log(index);
@@ -62,6 +68,8 @@ export class MylistPage implements OnInit {
     //   state : item
     // });
   }
+  
   ngOnInit() {
+
   }
 }

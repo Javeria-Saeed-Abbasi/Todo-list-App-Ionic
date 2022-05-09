@@ -18,34 +18,38 @@ export class NewlistPage implements OnInit {
   itemList;
 
   taskObject;
-
   taskCategory;
   itemCategory;
   constructor(public modalCtrl: ModalController, private route: ActivatedRoute, private router: Router) {
     this.itemList = history.state.itemList;
     this.itemCategory = history.state.itemCategory;
-
-    // console.log(this.itemList);
-    console.log(this.itemCategory);
   }
 
+  i = 0;
+  id:any = 0;
 
+  
   ngOnInit() {
+
   }
+
   async dismiss(){
     console.log(this.taskObject);
-    await this.modalCtrl.dismiss(this.taskObject);
+    await this.modalCtrl.dismiss(this.taskObject, this.id);
   }
   // selectedCategory(index){
   //   this.taskCategory = this.categories[index];
   // }
+ 
   addNew(){
-    this.taskObject = ({
-      itemList: this.taskList,
-      itemCategory: this.itemCategory,
-    });
-    console.log(this.title);
-    // console.log(this.updatedList);
+    
+      this.taskObject = ({
+        itemList: this.taskList,
+        itemCategory: this.itemCategory,
+      })
+
+    
+    // console.log(i);
     this.dismiss();
   }
 }
