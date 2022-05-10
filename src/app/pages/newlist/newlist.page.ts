@@ -12,6 +12,8 @@ import { Input } from '@angular/core';
 export class NewlistPage implements OnInit {
  @Input ()
  title: string;
+ previousVal:any;
+ 
 // updatedList: string;
   categories = ['Work' , 'Personal' , 'Business' , 'Planned' , 'Shopping'];
   taskList;
@@ -24,18 +26,15 @@ export class NewlistPage implements OnInit {
     this.itemList = history.state.itemList;
     this.itemCategory = history.state.itemCategory;
   }
-
-  i = 0;
-  id:any = 0;
-
   
   ngOnInit() {
-
+    this.taskList = this.previousVal
   }
 
   async dismiss(){
     console.log(this.taskObject);
-    await this.modalCtrl.dismiss(this.taskObject, this.id);
+    await this.modalCtrl.dismiss(this.taskObject);
+
   }
   // selectedCategory(index){
   //   this.taskCategory = this.categories[index];

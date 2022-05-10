@@ -14,6 +14,7 @@ export class MylistPage implements OnInit {
   itemCategory;
   itemList;
   title = true;
+  previousText:any = document.getElementById("previoustext") as HTMLInputElement
 
   constructor(public modalCtrl: ModalController, private route: ActivatedRoute, private router: Router) {
     this.itemCategory = history.state.itemCategory
@@ -43,15 +44,18 @@ export class MylistPage implements OnInit {
       component: NewlistPage,
       componentProps : {
         title: 'Update List',
-        
+        previousVal : item.itemList
     }
-    
     } );
+    this.previousText =  item.itemList;
+    console.log(this.previousText);
+    
     modal.onDidDismiss().then((newTaskObj:any) =>{
-      this.todoList.map((res, i)=>{
+      this.todoList.map((res:any, i)=>{
         if(index == i){
-          res.itemList = newTaskObj.data.itemList;  
+          res.itemList = newTaskObj?.data?.itemList;
         }
+        
       })
       
     });
